@@ -1,8 +1,5 @@
 package com.company;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Objects;
+//https://edabit.com/challenge/GBKphScsmDi9ek3ra
 
 public class vowelCount {
 
