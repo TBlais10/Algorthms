@@ -1,20 +1,33 @@
 package com.company;
 //https://edabit.com/challenge/9D39q2q9yAFCDM9da
 
+import java.util.Arrays;
+
 public class videoLength {
 
     public static int minutesToSeconds(String tm) {
+        String[] removeSymbol = tm.split(":");
+        int[] arr = new int[removeSymbol.length];
+        int seconds = 0;
 
-        if(tm.length() == 1)
-            return tm.charAt(0) - 48;
-        return tm.charAt(0) - 48 + minutesToSeconds(tm.substring(1, tm.length()));
+        for (int i = 0; i < removeSymbol.length; i++) {
+        arr[i] = Integer.parseInt(removeSymbol[i]);
+        }
+        if (arr[1] >= 60) {
+            return -1;
+        } else {
+        seconds = arr[0] * 60 + arr[1];
+        }
 
+//        System.out.println(Arrays.toString(removeSymbol));
+//        System.out.println(Arrays.toString(arr));
+//        System.out.println(seconds);
 
-        //return tm;
+        return seconds;
     }
 
     public static void main(String[] args) {
-        System.out.println(minutesToSeconds("10:30"));
+        System.out.println(minutesToSeconds("13:56"));
     }
 
 }
